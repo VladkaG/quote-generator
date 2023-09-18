@@ -17,5 +17,6 @@
 @media (max-width: 425px) {
   .quoteText {
     font-size: 28px;
+    padding: 0 0 0 15px;
   }
 }
