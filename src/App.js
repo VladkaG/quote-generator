@@ -65,8 +65,11 @@ function App() {
         )}
       </div>
       <footer>
-        created by <a href="https://github.com/VladkaG">Vladyslava</a> -
-        devChallenges.io
+        created by{' '}
+        <a href="https://github.com/VladkaG" target="_blank" rel='noreferrer'>
+          Vladyslava
+        </a>{' '}
+        - devChallenges.io
       </footer>
     </div>
   );

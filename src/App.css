@@ -13,6 +13,9 @@ footer a {
 
 .wrapper {
   min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -21,7 +24,7 @@ footer a {
   font-size: 18px;
   font-weight: 500;
   border: none;
-  padding: 30px 50px 0 0;
+  padding: 30px 5px 0 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -43,4 +46,10 @@ footer a {
 .error {
   text-align: center;
   padding: 100px;
+}
+
+@media (max-width: 425px) {
+  .main {
+    margin: 3rem auto 0 auto;
+  }
 }

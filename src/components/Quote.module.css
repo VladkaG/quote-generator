@@ -8,3 +8,14 @@
   line-height: 43px;
   padding: 0 0 0 100px;
 }
+
+@media (max-width: 768px) {
+  .quoteText {
+    padding: 0 0 0 30px;
+  }
+}
+@media (max-width: 425px) {
+  .quoteText {
+    font-size: 28px;
+  }
+}
