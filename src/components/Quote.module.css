@@ -1,0 +1,10 @@
+.quoteBox {
+  border-left: 8px solid #f7df94;
+}
+
+.quoteText {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 43px;
+  padding: 0 0 0 100px;
+}
