@@ -1,8 +1,8 @@
 import styles from './Author.module.css';
 
-function Author({ quoteAuthor, quoteGenre }) {
+function Author({ quoteAuthor, quoteGenre, handleQuotesClick }) {
   return (
-    <button className={styles.authorBox}>
+    <button onClick={handleQuotesClick} className={styles.authorBox}>
       <div className={styles.author}>{quoteAuthor}</div>
       <div className={styles.genre}>{quoteGenre}</div>
     </button>

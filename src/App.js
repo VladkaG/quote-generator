@@ -11,6 +11,8 @@ function App() {
   const [genre, setGenre] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [authorQuotes, setAuthorQuotes] = useState([]);
+  const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
   const API_URL_RANDOM =
     'https://quote-garden.onrender.com/api/v3/quotes/random';
@@ -26,6 +28,8 @@ function App() {
         setQuote(json.data[0].quoteText);
         setAuthor(json.data[0].quoteAuthor);
         setGenre(json.data[0].quoteGenre);
+        setAuthorQuotes([]);
+        setShowAuthorQuotes(false);
       })
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
@@ -34,6 +38,32 @@ function App() {
   const handleClick = () => {
     getQuote();
   };
+
+  const handleQuotesClick = () => {
+    fetch(`https://quote-garden.onrender.com/api/v3/quotes?author=${author}`)
+      .then((response) => response.json())
+      .then((json) => {
+        setAuthorQuotes(json.data.map((quoteData) => quoteData.quoteText));
+        setShowAuthorQuotes(true);
+      })
+      .catch((error) => setError(error.message))
+      .finally(() => setIsLoading(false));
+    console.log(authorQuotes);
+  };
+
+  if (isLoading) {
+    return (
+      <ColorRing
+        visible={true}
+        height="120"
+        width="120"
+        ariaLabel="blocks-loading"
+        wrapperStyle={{}}
+        wrapperClass="blocks-wrapper"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+      />
+    );
+  }
 
   if (error) {
     return <h1 className="error">Error: {error}</h1>;
@@ -46,27 +76,29 @@ function App() {
         <TfiReload />
       </button>
       <div className="main">
-        {isLoading ? (
-          <ColorRing
-            visible={true}
-            height="120"
-            width="120"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-          />
+        {showAuthorQuotes ? (
+          <div className="author-quotes">
+            <h2>{author}</h2>
+            <div>
+              {authorQuotes.map((quote, index) => (
+                <Quote key={index} quoteText={quote} />
+              ))}
+            </div>
+          </div>
         ) : (
           <>
-            {' '}
             <Quote quoteText={quote} />
-            <Author quoteAuthor={author} quoteGenre={genre} />
+            <Author
+              quoteAuthor={author}
+              quoteGenre={genre}
+              handleQuotesClick={handleQuotesClick}
+            />
           </>
         )}
       </div>
       <footer>
         created by{' '}
-        <a href="https://github.com/VladkaG" target="_blank" rel='noreferrer'>
+        <a href="https://github.com/VladkaG" target="_blank" rel="noreferrer">
           Vladyslava
         </a>{' '}
         - devChallenges.io

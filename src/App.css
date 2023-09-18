@@ -43,6 +43,12 @@ footer a {
   padding: 10px;
 }
 
+.author-quotes h2 {
+  padding: 0 0 10px 50px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
 .error {
   text-align: center;
   padding: 100px;
@@ -51,5 +57,9 @@ footer a {
 @media (max-width: 425px) {
   .main {
     margin: 3rem auto 0 auto;
+  }
+
+  .author-quotes h2 {
+    font-size: 28px;
   }
 }
