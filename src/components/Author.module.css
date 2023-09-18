@@ -1,12 +1,13 @@
 .authorBox {
   width: 90%;
   color: #4f4f4f;
-  margin: 7rem 0 0 4rem;
+  margin: 5rem 0 0 4rem;
   padding: 50px 30px;
   border: none;
   text-align: start;
   cursor: pointer;
   position: relative;
+  background: inherit;
 }
 
 .authorBox:hover {
