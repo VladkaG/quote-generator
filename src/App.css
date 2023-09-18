@@ -54,6 +54,11 @@ footer a {
   padding: 100px;
 }
 
+.loader {
+  text-align: center;
+  margin: 20rem auto;
+}
+
 @media (max-width: 425px) {
   .main {
     margin: 3rem auto 0 auto;
