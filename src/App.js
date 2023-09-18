@@ -48,21 +48,20 @@ function App() {
       })
       .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
-    console.log(authorQuotes);
   };
 
   if (isLoading) {
     return (
-      <div className='loader'>
-      <ColorRing
-        visible={true}
-        height="120"
-        width="120"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-      />
+      <div className="loader">
+        <ColorRing
+          visible={true}
+          height="120"
+          width="120"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        />
       </div>
     );
   }
