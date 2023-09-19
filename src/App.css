@@ -62,6 +62,7 @@ footer a {
 @media (max-width: 425px) {
   .main {
     margin: 3rem auto 0 auto;
+    padding: 5px;
   }
 
   .author-quotes h2 {
