@@ -17,7 +17,7 @@
 }
 @media (max-width: 425px) {
   .quoteBox {
-    margin: 10px;
+    margin: 30px 10px;
   }
   .quoteText {
     font-size: 28px;
